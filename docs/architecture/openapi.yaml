@@ -1,0 +1,608 @@
+openapi: 3.0.3
+info:
+  title: Screenshot Flashcards API
+  version: 0.1.0
+  description: |
+    API приложения для изучения языков по скриншотам.
+    Пользователь загружает скриншот, система находит слово, сохраняет фразу
+    с контекстом и создаёт карточку для интервального повторения.
+
+    Обработка скриншота асинхронная: POST /captures возвращает 202,
+    результат забирается через GET /captures/{captureId}.
+servers:
+  - url: https://api.example.com/v1
+    description: Production
+  - url: http://localhost:8080/v1
+    description: Local
+
+tags:
+  - name: Auth
+  - name: Captures
+  - name: Cards
+  - name: Study
+
+security:
+  - bearerAuth: []
+
+paths:
+  /auth/register:
+    post:
+      tags: [Auth]
+      summary: Регистрация пользователя
+      operationId: register
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        '201':
+          description: Пользователь создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+        '409':
+          description: Email уже занят
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  /auth/login:
+    post:
+      tags: [Auth]
+      summary: Вход по email и паролю
+      operationId: login
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Успешный вход
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+
+  /captures:
+    post:
+      tags: [Captures]
+      summary: Загрузить скриншот на обработку
+      description: |
+        Принимает изображение и ставит его в очередь на OCR и извлечение слов.
+        Возвращает 202 и идентификатор capture, статус проверяется через GET.
+      operationId: createCapture
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image, sourceLanguage]
+              properties:
+                image:
+                  type: string
+                  format: binary
+                  description: PNG, JPEG или WebP, до 10 МБ
+                sourceLanguage:
+                  $ref: '#/components/schemas/LanguageCode'
+                targetLanguage:
+                  $ref: '#/components/schemas/LanguageCode'
+      responses:
+        '202':
+          description: Скриншот принят в обработку
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Capture'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '413':
+          description: Файл слишком большой
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '415':
+          description: Неподдерживаемый формат изображения
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+
+  /captures/{captureId}:
+    get:
+      tags: [Captures]
+      summary: Статус обработки и найденные слова
+      operationId: getCapture
+      parameters:
+        - $ref: '#/components/parameters/CaptureId'
+      responses:
+        '200':
+          description: Текущее состояние capture
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Capture'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /captures/{captureId}/confirm:
+    post:
+      tags: [Captures]
+      summary: Создать карточку из выбранного слова
+      description: |
+        Пользователь выбирает одного из кандидатов (candidates) и при желании
+        правит перевод или фразу. Создаётся карточка.
+      operationId: confirmCapture
+      parameters:
+        - $ref: '#/components/parameters/CaptureId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConfirmCaptureRequest'
+      responses:
+        '201':
+          description: Карточка создана
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Card'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          description: Capture ещё не обработан или карточка уже создана
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  /cards:
+    get:
+      tags: [Cards]
+      summary: Список карточек пользователя
+      operationId: listCards
+      parameters:
+        - name: language
+          in: query
+          description: Фильтр по изучаемому языку
+          schema:
+            $ref: '#/components/schemas/LanguageCode'
+        - name: q
+          in: query
+          description: Поиск по слову или переводу
+          schema:
+            type: string
+            maxLength: 100
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+        - name: cursor
+          in: query
+          description: Курсор из nextCursor предыдущего ответа
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Страница карточек
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CardList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /cards/{cardId}:
+    patch:
+      tags: [Cards]
+      summary: Изменить карточку
+      operationId: updateCard
+      parameters:
+        - $ref: '#/components/parameters/CardId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardUpdate'
+      responses:
+        '200':
+          description: Обновлённая карточка
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Card'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+    delete:
+      tags: [Cards]
+      summary: Удалить карточку
+      operationId: deleteCard
+      parameters:
+        - $ref: '#/components/parameters/CardId'
+      responses:
+        '204':
+          description: Карточка удалена
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /study/queue:
+    get:
+      tags: [Study]
+      summary: Карточки к повторению сейчас
+      operationId: getStudyQueue
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+      responses:
+        '200':
+          description: Очередь карточек, срок повторения которых наступил
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudyQueue'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /study/reviews:
+    post:
+      tags: [Study]
+      summary: Отправить результат повторения карточки
+      description: Обновляет расписание интервального повторения карточки.
+      operationId: submitReview
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewRequest'
+      responses:
+        '200':
+          description: Карточка с новым расписанием
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Card'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        Access-токен из /auth/login или /auth/register.
+        Передаётся в заголовке `Authorization: Bearer <token>`.
+
+  parameters:
+    CaptureId:
+      name: captureId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    CardId:
+      name: cardId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+  responses:
+    Unauthorized:
+      description: Токен отсутствует, просрочен или неверные учётные данные
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Ресурс не найден
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ValidationError:
+      description: Ошибка валидации входных данных
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    TooManyRequests:
+      description: Превышен лимит запросов
+      headers:
+        Retry-After:
+          description: Через сколько секунд повторить запрос
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  schemas:
+    LanguageCode:
+      type: string
+      description: Код языка по ISO 639-1
+      pattern: '^[a-z]{2}$'
+      example: de
+
+    RegisterRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+          minLength: 8
+          maxLength: 128
+        nativeLanguage:
+          $ref: '#/components/schemas/LanguageCode'
+
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+
+    TokenResponse:
+      type: object
+      required: [accessToken, tokenType, expiresIn]
+      properties:
+        accessToken:
+          type: string
+        tokenType:
+          type: string
+          enum: [Bearer]
+        expiresIn:
+          type: integer
+          description: Время жизни токена в секундах
+          example: 3600
+
+    CaptureStatus:
+      type: string
+      enum: [pending, processing, ready, failed]
+
+    Candidate:
+      type: object
+      description: Слово, найденное на скриншоте, с контекстом
+      required: [id, word, contextPhrase]
+      properties:
+        id:
+          type: string
+          example: c1
+        word:
+          type: string
+          example: Fernweh
+        lemma:
+          type: string
+          nullable: true
+          description: Базовая форма слова
+        contextPhrase:
+          type: string
+          description: Фраза со скриншота, в которой встретилось слово
+          example: Ich habe großes Fernweh nach Japan.
+        translation:
+          type: string
+          nullable: true
+          example: тоска по дальним странам
+        confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+
+    Capture:
+      type: object
+      required: [id, status, sourceLanguage, createdAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          $ref: '#/components/schemas/CaptureStatus'
+        sourceLanguage:
+          $ref: '#/components/schemas/LanguageCode'
+        targetLanguage:
+          $ref: '#/components/schemas/LanguageCode'
+        candidates:
+          type: array
+          description: Заполнено, когда status = ready
+          items:
+            $ref: '#/components/schemas/Candidate'
+        error:
+          type: string
+          nullable: true
+          description: Причина сбоя, когда status = failed
+        createdAt:
+          type: string
+          format: date-time
+
+    ConfirmCaptureRequest:
+      type: object
+      required: [candidateId]
+      properties:
+        candidateId:
+          type: string
+          description: id выбранного кандидата из Capture.candidates
+        translation:
+          type: string
+          maxLength: 300
+          description: Если задано, заменяет автоматический перевод
+        contextPhrase:
+          type: string
+          maxLength: 500
+          description: Если задано, заменяет найденную фразу
+
+    Srs:
+      type: object
+      description: Состояние интервального повторения
+      required: [dueAt, intervalDays, ease, repetitions]
+      properties:
+        dueAt:
+          type: string
+          format: date-time
+        intervalDays:
+          type: integer
+          minimum: 0
+        ease:
+          type: number
+          format: float
+        repetitions:
+          type: integer
+          minimum: 0
+
+    Card:
+      type: object
+      required: [id, word, contextPhrase, translation, sourceLanguage, srs, createdAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        captureId:
+          type: string
+          format: uuid
+          nullable: true
+        word:
+          type: string
+        lemma:
+          type: string
+          nullable: true
+        contextPhrase:
+          type: string
+        translation:
+          type: string
+        sourceLanguage:
+          $ref: '#/components/schemas/LanguageCode'
+        targetLanguage:
+          $ref: '#/components/schemas/LanguageCode'
+        srs:
+          $ref: '#/components/schemas/Srs'
+        createdAt:
+          type: string
+          format: date-time
+
+    CardUpdate:
+      type: object
+      minProperties: 1
+      properties:
+        word:
+          type: string
+          maxLength: 100
+        contextPhrase:
+          type: string
+          maxLength: 500
+        translation:
+          type: string
+          maxLength: 300
+
+    CardList:
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Card'
+        nextCursor:
+          type: string
+          nullable: true
+          description: null, если это последняя страница
+
+    StudyQueue:
+      type: object
+      required: [items, totalDue]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Card'
+        totalDue:
+          type: integer
+          description: Сколько всего карточек ждут повторения
+
+    ReviewRating:
+      type: string
+      enum: [again, hard, good, easy]
+
+    ReviewRequest:
+      type: object
+      required: [cardId, rating]
+      properties:
+        cardId:
+          type: string
+          format: uuid
+        rating:
+          $ref: '#/components/schemas/ReviewRating'
+
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+        code:
+          type: string
+          example: validation_error
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              field:
+                type: string
+              issue:
+                type: string
