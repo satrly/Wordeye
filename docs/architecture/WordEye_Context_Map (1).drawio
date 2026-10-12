@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram id="wordeye-context-map" name="Context Map">
+    <mxGraphModel dx="2380" dy="1500" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2380" pageHeight="1500" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="WordEye — карта контекстов" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=38;fontStyle=1;fontColor=#20324D;" vertex="1" parent="1">
+          <mxGeometry x="55" y="45" width="2000" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Четыре контекста и внешние источники" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=22;fontColor=#54657E;" vertex="1" parent="1">
+          <mxGeometry x="55" y="115" width="1800" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="external-title" value="Внешние источники&lt;br&gt;и поставщики" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=21;fontStyle=1;fontColor=#996D2E;" vertex="1" parent="1">
+          <mxGeometry x="55" y="165" width="500" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="wordeye-boundary" value="WordEye" style="rounded=1;arcSize=3;container=1;collapsible=0;html=1;whiteSpace=wrap;fillColor=#FBFDFF;strokeColor=#9AB0C9;strokeWidth=2;fontFamily=Arial;fontSize=26;fontStyle=1;fontColor=#20324D;align=left;verticalAlign=top;spacingTop=25;spacingLeft=32;" vertex="1" parent="1">
+          <mxGeometry x="740" y="280" width="1600" height="970" as="geometry" />
+        </mxCell>
+        <mxCell id="language-note" value="Колоды группируются по изучаемому языку: Немецкий, Английский и другие." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=21;fontColor=#54657E;" vertex="1" parent="wordeye-boundary">
+          <mxGeometry x="55" y="90" width="1490" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="phone" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:24px;font-weight:bold;'&gt;Камера и галерея&lt;br&gt;телефона&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:13px;'&gt;Фото из камеры&lt;br&gt;или медиатеки&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=9;html=1;whiteSpace=wrap;fillColor=#FFF8EC;strokeColor=#C6974B;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="55" y="220" width="340" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="dictionary" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:24px;font-weight:bold;'&gt;Готовый словарь&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:13px;'&gt;Слова, значения и переводы&lt;br&gt;Импорт файла или API&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=9;html=1;whiteSpace=wrap;fillColor=#FFF8EC;strokeColor=#C6974B;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="55" y="505" width="340" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="provider" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:24px;font-weight:bold;'&gt;Сервис OCR&lt;br&gt;и перевода&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:13px;'&gt;Распознанный текст и перевод&lt;br&gt;Внешний API&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=9;html=1;whiteSpace=wrap;fillColor=#FFF8EC;strokeColor=#C6974B;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="55" y="740" width="340" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="translation" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:24px;font-weight:bold;'&gt;Перевод&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:13px;'&gt;Распознать текст&lt;br&gt;Получить перевод слова&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=9;html=1;whiteSpace=wrap;fillColor=#EAF2FC;strokeColor=#7998BC;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="wordeye-boundary">
+          <mxGeometry x="60" y="210" width="320" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="materials" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:24px;font-weight:bold;'&gt;Учебные материалы&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:13px;'&gt;Колоды по языкам&lt;br&gt;Карточки и настройки&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=9;html=1;whiteSpace=wrap;fillColor=#EAF2FC;strokeColor=#7998BC;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="wordeye-boundary">
+          <mxGeometry x="630" y="210" width="320" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="review" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:24px;font-weight:bold;'&gt;Повторение&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:13px;'&gt;Оценки ответов&lt;br&gt;Прогресс по языкам&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=9;html=1;whiteSpace=wrap;fillColor=#EAF2FC;strokeColor=#7998BC;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="wordeye-boundary">
+          <mxGeometry x="1200" y="210" width="320" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="account" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:24px;font-weight:bold;'&gt;Учётная запись&lt;br&gt;и данные&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:13px;'&gt;Регистрация и вход&lt;br&gt;Синхронизация данных&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=9;html=1;whiteSpace=wrap;fillColor=#EAF2FC;strokeColor=#7998BC;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="wordeye-boundary">
+          <mxGeometry x="610" y="660" width="360" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="photo-input" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:21px;'&gt;Фотография&lt;/div&gt;&lt;div style='font-size:15px;color:#65758A;margin-top:5px;'&gt;Адаптер ОС&lt;/div&gt;&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A77B3B;strokeWidth=2.5;endArrow=block;endFill=1;endSize=10;fontFamily=Arial;fontSize=21;fontColor=#20324D;whiteSpace=wrap;labelWidth=275;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.2222222222222222;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="phone" target="translation">
+          <mxGeometry x="-0.5" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="295" />
+              <mxPoint x="630" y="530" />
+            </Array>
+            <mxPoint x="0" y="-43" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dictionary-input" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:21px;'&gt;Переводы и значения&lt;/div&gt;&lt;div style='font-size:15px;color:#65758A;margin-top:5px;'&gt;ACL&lt;/div&gt;&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A77B3B;strokeWidth=2.5;endArrow=block;endFill=1;endSize=10;fontFamily=Arial;fontSize=21;fontColor=#20324D;whiteSpace=wrap;labelWidth=290;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="dictionary" target="translation">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="0" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocr-input" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:21px;'&gt;Распознанный текст&lt;br&gt;и перевод&lt;/div&gt;&lt;div style='font-size:15px;color:#65758A;margin-top:5px;'&gt;ACL&lt;/div&gt;&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A77B3B;strokeWidth=2.5;endArrow=block;endFill=1;endSize=10;fontFamily=Arial;fontSize=21;fontColor=#20324D;whiteSpace=wrap;labelWidth=220;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.7777777777777778;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="provider" target="translation">
+          <mxGeometry x="-0.5" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="815" />
+              <mxPoint x="630" y="630" />
+            </Array>
+            <mxPoint x="-32.5" y="-50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="word-to-card" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:21px;'&gt;Слово и перевод&lt;/div&gt;&lt;div style='font-size:15px;color:#65758A;margin-top:5px;'&gt;Customer / Supplier&lt;/div&gt;&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#465E7C;strokeWidth=2.5;endArrow=block;endFill=1;endSize=10;fontFamily=Arial;fontSize=21;fontColor=#20324D;whiteSpace=wrap;labelWidth=230;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="translation" target="materials">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="0" y="-45" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="card-to-review" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:21px;'&gt;Карточка добавлена&lt;br&gt;или изменена&lt;/div&gt;&lt;div style='font-size:15px;color:#65758A;margin-top:5px;'&gt;Event-driven / PL&lt;/div&gt;&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#39766C;strokeWidth=2.5;endArrow=block;endFill=1;endSize=10;fontFamily=Arial;fontSize=21;fontColor=#20324D;whiteSpace=wrap;labelWidth=230;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;dashPattern=8 5;" edge="1" parent="1" source="materials" target="review">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="0" y="-55" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sync-materials" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:21px;'&gt;Карточки между&lt;br&gt;устройствами&lt;/div&gt;&lt;div style='font-size:15px;color:#65758A;margin-top:5px;'&gt;PL / Open Host&lt;/div&gt;&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#465E7C;strokeWidth=2.5;endArrow=block;endFill=1;endSize=10;fontFamily=Arial;fontSize=21;fontColor=#20324D;whiteSpace=wrap;labelWidth=300;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=block;startFill=1;startSize=10;" edge="1" parent="1" source="materials" target="account">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="190" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sync-progress" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:21px;'&gt;Ответы и прогресс&lt;br&gt;между устройствами&lt;/div&gt;&lt;div style='font-size:15px;color:#65758A;margin-top:5px;'&gt;PL / Open Host&lt;/div&gt;&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#465E7C;strokeWidth=2.5;endArrow=block;endFill=1;endSize=10;fontFamily=Arial;fontSize=21;fontColor=#20324D;whiteSpace=wrap;labelWidth=335;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=block;startFill=1;startSize=10;" edge="1" parent="1" source="review" target="account">
+          <mxGeometry x="-0.5" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2100" y="1030" />
+            </Array>
+            <mxPoint x="0" y="-55" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="external-note" value="Камера и галерея — возможности ОС.&lt;br&gt;Готовый словарь — сторонние данные.&lt;br&gt;Для локального словаря связь означает&lt;br&gt;импорт и последующее обновление." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=19;fontColor=#65758A;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="55" y="975" width="610" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-note" value="Учётная запись и данные обеспечивает единый вход для всех контекстов.&lt;br&gt;Карточки и прогресс проверяются в своих контекстах перед синхронизацией." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=20;fontColor=#54657E;verticalAlign=top;" vertex="1" parent="wordeye-boundary">
+          <mxGeometry x="55" y="870" width="1490" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-request" value="" style="html=1;strokeColor=#465E7C;strokeWidth=2.5;endArrow=block;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="1320" as="sourcePoint" />
+            <mxPoint x="170" y="1320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-event" value="" style="html=1;strokeColor=#465E7C;strokeWidth=2.5;endArrow=block;endFill=1;dashed=1;dashPattern=8 5;strokeColor=#39766C;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825" y="1320" as="sourcePoint" />
+            <mxPoint x="925" y="1320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-request-label" value="Запрос, импорт или обмен данными" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=21;fontColor=#54657E;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1295" width="590" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-event-label" value="Событие об изменении" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=21;fontColor=#54657E;" vertex="1" parent="1">
+          <mxGeometry x="945" y="1295" width="530" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-bidirectional" value="Две стрелки — обмен в обе стороны" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=21;fontColor=#54657E;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="1295" width="735" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-patterns" value="ACL — адаптер чужой модели. PL — общий формат данных. Open Host — открытый API. Customer / Supplier — заказчик и поставщик." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=20;fontColor=#65758A;" vertex="1" parent="1">
+          <mxGeometry x="55" y="1400" width="2270" height="55" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="account-aggregate" name="Учётная запись">
+    <mxGraphModel dx="1850" dy="1180" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1850" pageHeight="1180" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Учётная запись" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=38;fontStyle=1;fontColor=#20324D;" vertex="1" parent="1">
+          <mxGeometry x="50" y="30" width="1700" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Контекст Учётная запись и данные" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=22;fontColor=#54657E;" vertex="1" parent="1">
+          <mxGeometry x="50" y="112" width="1700" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Одна транзакция — один агрегат" style="rounded=1;arcSize=3;container=1;collapsible=0;html=1;whiteSpace=wrap;fillColor=#FBFDFF;strokeColor=#9AB0C9;strokeWidth=2;fontFamily=Arial;fontSize=22;fontStyle=1;fontColor=#20324D;align=left;verticalAlign=top;spacingTop=15;spacingLeft=25;" vertex="1" parent="1">
+          <mxGeometry x="50" y="200" width="1220" height="750" as="geometry" />
+        </mxCell>
+        <mxCell id="aggregate-root" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;Account — корень&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;UserId&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#DAE8FC;strokeColor=#6087B7;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="65" width="1140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="entity" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;Сеанс входа Session&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;SessionId&lt;br&gt;Открытие, завершение и отзыв&lt;br&gt;Изменения только через Account&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#EEF4FC;strokeColor=#7998BC;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="285" width="500" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="values" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;Объекты-значения&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;Данные входа&lt;br&gt;Набор выбранных языков&lt;br&gt;Срок действия сеанса&lt;br&gt;Неизменяемые значения&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#F1F7EF;strokeColor=#83A67A;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="640" y="285" width="500" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="external" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;Связи наружу&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;DeviceId&lt;br&gt;Колоды и прогресс — отдельно&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#FFF8EC;strokeColor=#C6974B;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="285" width="390" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="owns-entity" value="Управляет сущностью" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#465E7C;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#54657E;labelBackgroundColor=#FFFFFF;labelWidth=230;endArrow=block;endFill=1;exitX=0.22807017543859648;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" edge="1" parent="1" source="aggregate-root" target="entity">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="0" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="owns-values" value="Заменяет значения" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#465E7C;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#54657E;labelBackgroundColor=#FFFFFF;labelWidth=230;endArrow=block;endFill=1;exitX=0.7456140350877193;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" edge="1" parent="1" source="aggregate-root" target="values">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="0" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="external-link" value="Только ID" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#465E7C;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#54657E;labelBackgroundColor=#FFFFFF;labelWidth=120;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;dashed=1;dashPattern=7 5;" edge="1" parent="1" source="aggregate-root" target="external">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1320" y="320" />
+              <mxPoint x="1320" y="360" />
+            </Array>
+            <mxPoint x="15" y="-35" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rule-title" value="Ключевые инварианты" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=23;fontStyle=1;fontColor=#20324D;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="525" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-0" value="У1. Правила входа одинаковы для всех устройств." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=20;fontColor=#54657E;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="585" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-1" value="У2. После смены пароля прежние сеансы прекращают действовать." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=20;fontColor=#54657E;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="627" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-2" value="У3. Выбор языков не удаляет созданные колоды и прогресс." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=20;fontColor=#54657E;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="669" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="operations" value="Операции корня: register() · openSession() · changePassword() · selectLanguages() · closeSession()" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=19;fontColor=#20324D;" vertex="1" parent="1">
+          <mxGeometry x="50" y="980" width="1750" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="Синхронизация входит в этот контекст, но изменяет материалы и прогресс через их корни.&lt;br&gt;Учётная запись не содержит всю коллекцию колод и карточек пользователя." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=19;fontColor=#54657E;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1055" width="1750" height="75" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="deck-aggregate" name="Колода">
+    <mxGraphModel dx="1850" dy="1180" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1850" pageHeight="1180" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Колода" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=38;fontStyle=1;fontColor=#20324D;" vertex="1" parent="1">
+          <mxGeometry x="50" y="30" width="1700" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Контекст Учебные материалы" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=22;fontColor=#54657E;" vertex="1" parent="1">
+          <mxGeometry x="50" y="112" width="1700" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Одна транзакция — один агрегат" style="rounded=1;arcSize=3;container=1;collapsible=0;html=1;whiteSpace=wrap;fillColor=#FBFDFF;strokeColor=#9AB0C9;strokeWidth=2;fontFamily=Arial;fontSize=22;fontStyle=1;fontColor=#20324D;align=left;verticalAlign=top;spacingTop=15;spacingLeft=25;" vertex="1" parent="1">
+          <mxGeometry x="50" y="200" width="1220" height="750" as="geometry" />
+        </mxCell>
+        <mxCell id="aggregate-root" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;Deck — корень&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;DeckId&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#DAE8FC;strokeColor=#6087B7;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="65" width="1140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="entity" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;Карточки Card&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;CardId внутри Deck&lt;br&gt;Язык карточки равен языку колоды&lt;br&gt;Изменения только через Deck&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#EEF4FC;strokeColor=#7998BC;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="285" width="500" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="values" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;Объекты-значения&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;Изучаемый язык колоды&lt;br&gt;Название и настройки колоды&lt;br&gt;Содержание и оформление Card&lt;br&gt;Ссылки на медиа при наличии&lt;br&gt;Неизменяемые значения&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#F1F7EF;strokeColor=#83A67A;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="640" y="285" width="500" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="external" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;Связи наружу&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;UserId&lt;br&gt;TranslationId при сохранении слова&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#FFF8EC;strokeColor=#C6974B;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="285" width="390" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="owns-entity" value="Управляет сущностью" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#465E7C;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#54657E;labelBackgroundColor=#FFFFFF;labelWidth=230;endArrow=block;endFill=1;exitX=0.22807017543859648;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" edge="1" parent="1" source="aggregate-root" target="entity">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="0" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="owns-values" value="Заменяет значения" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#465E7C;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#54657E;labelBackgroundColor=#FFFFFF;labelWidth=230;endArrow=block;endFill=1;exitX=0.7456140350877193;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" edge="1" parent="1" source="aggregate-root" target="values">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="0" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="external-link" value="Только ID" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#465E7C;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#54657E;labelBackgroundColor=#FFFFFF;labelWidth=120;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;dashed=1;dashPattern=7 5;" edge="1" parent="1" source="aggregate-root" target="external">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1320" y="320" />
+              <mxPoint x="1320" y="360" />
+            </Array>
+            <mxPoint x="15" y="-35" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rule-title" value="Ключевые инварианты" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=23;fontStyle=1;fontColor=#20324D;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="525" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-0" value="К1. Один изучаемый язык, закреплённый при создании колоды." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=20;fontColor=#54657E;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="585" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-1" value="К2. Карточка другого изучаемого языка в эту колоду не добавляется." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=20;fontColor=#54657E;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="627" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-2" value="К5. Восстановление сохраняет DeckId, CardId, владельца и язык." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=20;fontColor=#54657E;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="669" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="operations" value="Операции корня: create() · addCard() · editCard() · changeSettings() · archive() · restoreFromSnapshot()" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=19;fontColor=#20324D;" vertex="1" parent="1">
+          <mxGeometry x="50" y="980" width="1750" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="Языковая группа — проекция колод: UserId + StudyLanguage. Это не отдельный агрегат.&lt;br&gt;Язык перевода хранится отдельно: de → ru и de → en входят в группу «Немецкий»." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=19;fontColor=#54657E;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1055" width="1750" height="75" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="progress-aggregate" name="Прогресс карточки">
+    <mxGraphModel dx="1850" dy="1180" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1850" pageHeight="1180" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Прогресс карточки" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=38;fontStyle=1;fontColor=#20324D;" vertex="1" parent="1">
+          <mxGeometry x="50" y="30" width="1700" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Контекст Повторение" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=22;fontColor=#54657E;" vertex="1" parent="1">
+          <mxGeometry x="50" y="112" width="1700" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="Одна транзакция — один агрегат" style="rounded=1;arcSize=3;container=1;collapsible=0;html=1;whiteSpace=wrap;fillColor=#FBFDFF;strokeColor=#9AB0C9;strokeWidth=2;fontFamily=Arial;fontSize=22;fontStyle=1;fontColor=#20324D;align=left;verticalAlign=top;spacingTop=15;spacingLeft=25;" vertex="1" parent="1">
+          <mxGeometry x="50" y="200" width="1220" height="750" as="geometry" />
+        </mxCell>
+        <mxCell id="aggregate-root" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;CardProgress — корень&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;ProgressId&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#DAE8FC;strokeColor=#6087B7;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="65" width="1140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="entity" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;Последнее повторение&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;ReviewId и ContentVersion&lt;br&gt;Оценка показанной версии карточки&lt;br&gt;Полная история — проекция событий&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#EEF4FC;strokeColor=#7998BC;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="285" width="500" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="values" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;Объекты-значения&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;UserId, DeckId, CardId, StudyLanguage&lt;br&gt;Оценка и время повторения&lt;br&gt;Состояние интервального повторения&lt;br&gt;Следующая дата повторения&lt;br&gt;Неизменяемые значения&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#F1F7EF;strokeColor=#83A67A;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="640" y="285" width="500" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="external" value="&lt;div style='text-align:center;line-height:1.25;'&gt;&lt;div style='font-size:25px;font-weight:bold;'&gt;Связи наружу&lt;/div&gt;&lt;div style='font-size:18px;color:#54657E;margin-top:12px;'&gt;UserId, DeckId, CardId&lt;br&gt;Чтение карточки через корень Deck&lt;/div&gt;&lt;/div&gt;" style="rounded=1;arcSize=8;html=1;whiteSpace=wrap;fillColor=#FFF8EC;strokeColor=#C6974B;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#20324D;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="285" width="390" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="owns-entity" value="Управляет сущностью" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#465E7C;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#54657E;labelBackgroundColor=#FFFFFF;labelWidth=230;endArrow=block;endFill=1;exitX=0.22807017543859648;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" edge="1" parent="1" source="aggregate-root" target="entity">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="0" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="owns-values" value="Заменяет значения" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#465E7C;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#54657E;labelBackgroundColor=#FFFFFF;labelWidth=230;endArrow=block;endFill=1;exitX=0.7456140350877193;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" edge="1" parent="1" source="aggregate-root" target="values">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="0" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="external-link" value="Только ID" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#465E7C;strokeWidth=2;fontFamily=Arial;fontSize=18;fontColor=#54657E;labelBackgroundColor=#FFFFFF;labelWidth=120;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;dashed=1;dashPattern=7 5;" edge="1" parent="1" source="aggregate-root" target="external">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1320" y="320" />
+              <mxPoint x="1320" y="360" />
+            </Array>
+            <mxPoint x="15" y="-35" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rule-title" value="Ключевые инварианты" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=23;fontStyle=1;fontColor=#20324D;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="525" width="1120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-0" value="П1. Прогресс закреплён за пользователем, колодой, карточкой и языком." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=20;fontColor=#54657E;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="585" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-1" value="П2. Повторная отправка того же ReviewId учитывается один раз." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=20;fontColor=#54657E;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="627" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-2" value="П3. Оценка, прогресс и следующая дата сохраняются вместе." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=20;fontColor=#54657E;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="669" width="1120" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="operations" value="Операции корня: initialize() · recordAnswer() · applyCardRevision() · suspend() · resume()" style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=19;fontColor=#20324D;" vertex="1" parent="1">
+          <mxGeometry x="50" y="980" width="1750" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="Карточка адресуется через DeckId + CardId; чужие объекты не включаются в агрегат.&lt;br&gt;Один ответ изменяет один CardProgress. Оформление не сбрасывает прогресс." style="text;html=1;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=Arial;align=left;verticalAlign=middle;fontSize=19;fontColor=#54657E;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1055" width="1750" height="75" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
