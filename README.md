@@ -35,11 +35,3 @@ WordEye использует интервальное повторение: да
 ## Синхронизация
 
 Пользователь может войти в одну учётную запись на нескольких устройствах. Между ними синхронизируются сохранённые слова, колоды, настройки и прогресс повторений.
-
-## Sequence-диаграммы
-
-[Открыть диаграммы в diagrams.net](https://viewer.diagrams.net/?pages=1&title=sequence.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fsatrly%2FWordeye%2Fmain%2Fdocs%2Farchitecture%2FRace_Conditions%252BSequence%2Fsequence.drawio)
-
-Все диаграммы собраны в одном многостраничном файле. Переключайте страницы стрелками или через список страниц внизу просмотрщика.
-
-[Исходный файл sequence.drawio](https://github.com/satrly/Wordeye/blob/main/docs/architecture/Race_Conditions%2BSequence/sequence.drawio)
